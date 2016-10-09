@@ -7,6 +7,21 @@ public class Calculator {
     }
   }
 
+  public void deduct(int first, int second) {
+    this.result = first - second;
+  }
+
+  public void multiplication(int ... params) {
+    this.result = 1;
+    for (Integer param : params) {
+      this.result *= param;
+    }
+  }
+
+  public void divide(int first, int second) {
+    this.result = first / second;  
+  }
+
   public int getResult() {
     return this.result;
   }

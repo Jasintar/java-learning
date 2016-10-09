@@ -9,11 +9,28 @@ public class InteractRunner {
       Calculator calc = new Calculator();
       String exit = "no";
       while (!exit.equals("yes")) {
+        System.out.println("Enter operator: ");
+        String operator = reader.next();
         System.out.println("Enter first arg: ");
         String first = reader.next();
         System.out.println("Enter second arg: ");
         String second = reader.next();
-        calc.add(Integer.valueOf(first), Integer.valueOf(second));
+        switch (operator) {
+          case "+":
+            calc.add(Integer.valueOf(first), Integer.valueOf(second));
+            break;
+          case "-":
+            calc.deduct(Integer.valueOf(first), Integer.valueOf(second));
+            break;
+          case "*":
+            calc.multiplication(Integer.valueOf(first), Integer.valueOf(second));
+            break;
+          case "/":
+            calc.divide(Integer.valueOf(first), Integer.valueOf(second));
+            break;
+          default:
+            break;
+        }
         System.out.println("Result: "+ calc.getResult());
         calc.clearResult();
         System.out.println("Exit? yes/no");
